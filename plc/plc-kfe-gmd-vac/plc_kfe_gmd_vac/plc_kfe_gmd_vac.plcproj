@@ -95,10 +95,6 @@
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
-    <PlaceholderReference Include="L2SI Vacuum Library">
-      <DefaultResolution>L2SI Vacuum Library, * (SLAC)</DefaultResolution>
-      <Namespace>L2SI_Vacuum_Library</Namespace>
-    </PlaceholderReference>
     <PlaceholderReference Include="LCLS General">
       <DefaultResolution>LCLS General, * (SLAC)</DefaultResolution>
       <Namespace>LCLS_General</Namespace>
@@ -134,18 +130,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PlaceholderResolution Include="L2SI Vacuum Library">
-      <Resolution>L2SI Vacuum Library, * (SLAC)</Resolution>
-    </PlaceholderResolution>
     <PlaceholderResolution Include="LCLS General">
       <Resolution>LCLS General, 0.0.0 (SLAC)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="PMPS">
-      <Resolution>PMPS, 0.0.0 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_Utilities">
       <Resolution>Tc2_Utilities, 3.3.35.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
+  </ItemGroup>
+  <ItemGroup>
+    <LibraryReference Include="L2SI Vacuum Library,1.0.1,SLAC">
+      <Namespace>L2SI_Vacuum_Library</Namespace>
+    </LibraryReference>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>

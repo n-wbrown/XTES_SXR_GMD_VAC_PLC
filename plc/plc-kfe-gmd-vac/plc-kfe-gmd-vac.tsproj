@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.4">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4022.30">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-000000000035}" TcBaseType="true" HideType="true">UINTARR2</Name>
@@ -62,10 +62,12 @@
 			<SubItem>
 				<Name>nState4</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
-				<Comment><![CDATA[Encoder Status 4 (automatically linked):
+				<Comment>
+					<![CDATA[Encoder Status 4 (automatically linked):
 0x01 (Bit 0) = IO data invalid (e.g. EtherCAT 'WcState')
 0x02 (Bit 1) = IO data input toggle (e.g. EtherCAT 'InputToggle')
-]]></Comment>
+]]>
+				</Comment>
 				<BitSize>8</BitSize>
 				<BitOffs>88</BitOffs>
 			</SubItem>
@@ -270,13 +272,15 @@
 			<SubItem>
 				<Name>nState4</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
-				<Comment><![CDATA[Drive Status 4 (automatically linked):
+				<Comment>
+					<![CDATA[Drive Status 4 (automatically linked):
 0x01 (0000 0001) = IO data invalid (e.g. EtherCAT 'WcState')
 0x02 (0000 0010) = IO data input toggle (e.g. EtherCAT 'InputToggle')
 
 Drive Status 4 (manually linked):
 0x80 (1000 0000) = Fast axis stop (digital IO interrupt)
-]]></Comment>
+]]>
+				</Comment>
 				<BitSize>8</BitSize>
 				<BitOffs>88</BitOffs>
 			</SubItem>
@@ -618,7 +622,7 @@ Drive Status 4 (manually linked):
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{4C3FC5AC-D5AA-44C6-AC5A-159774BA0F6D}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">NCTOPLC_AXIS_REF_STATE_OLD</Name>
+			<Name GUID="{4C3FC5AC-D5AA-44C6-AC5A-159774BA0F6D}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">NCTOPLC_AXIS_REF_STATE</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
 				<Name>Operational</Name>
@@ -1010,11 +1014,11 @@ Drive Status 4 (manually linked):
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC" TcBaseType="true">NCTOPLC_AXIS_REF_OLD4</Name>
+			<Name GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC" TcBaseType="true">NCTOPLC_AXIS_REF</Name>
 			<BitSize>2048</BitSize>
 			<SubItem>
 				<Name>StateDWord</Name>
-				<Type GUID="{4C3FC5AC-D5AA-44C6-AC5A-159774BA0F6D}" Namespace="MC">NCTOPLC_AXIS_REF_STATE_OLD</Type>
+				<Type GUID="{4C3FC5AC-D5AA-44C6-AC5A-159774BA0F6D}" Namespace="MC">NCTOPLC_AXIS_REF_STATE</Type>
 				<BitSize>32</BitSize>
 				<BitOffs>0</BitOffs>
 			</SubItem>
@@ -1027,7 +1031,8 @@ Drive Status 4 (manually linked):
 			<SubItem>
 				<Name>AxisState</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
-				<Comment><![CDATA[Present State Of The Axis Movement (continuous axis):
+				<Comment>
+					<![CDATA[Present State Of The Axis Movement (continuous axis):
 0  = INACTIVE:		axis has no job
 1  = RUNNING:		axis is executing a motion job
 2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
@@ -1041,7 +1046,8 @@ Slaves only:
 External Setpoint Generation:
 41 = EXTSETGEN_MODE1:	external setpoint generation active
 42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]></Comment>
+]]>
+				</Comment>
 				<BitSize>32</BitSize>
 				<BitOffs>64</BitOffs>
 			</SubItem>
@@ -1054,7 +1060,8 @@ External Setpoint Generation:
 			<SubItem>
 				<Name>HomingState</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
-				<Comment><![CDATA[Axis Homing Status:
+				<Comment>
+					<![CDATA[Axis Homing Status:
 0: idle
 1: start homing
 2: searching home switch
@@ -1062,19 +1069,22 @@ External Setpoint Generation:
 4: moving off home switch
 5: searching sync pulse
 6: stopping after homing
-]]></Comment>
+]]>
+				</Comment>
 				<BitSize>32</BitSize>
 				<BitOffs>128</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>CoupleState</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
-				<Comment><![CDATA[Axis Coupling Status:
+				<Comment>
+					<![CDATA[Axis Coupling Status:
 0: axis is a single axis (not coupled)
 1: axis is a master axis
 2: axis is master and slave
 3: axis is a slave axis
-]]></Comment>
+]]>
+				</Comment>
 				<BitSize>32</BitSize>
 				<BitOffs>160</BitOffs>
 			</SubItem>
@@ -1300,13 +1310,13 @@ External Setpoint Generation:
 					<Type GUID="{F794B740-82D7-4637-848E-4F74A711D038}">NCAXLESTRUCT_TOPLC4</Type>
 				</Relation>
 				<Relation Priority="100">
-					<Type GUID="{40BD39B0-C3EA-4F74-9F4F-5F1982786F7C}"></Type>
+					<Type GUID="{40BD39B0-C3EA-4F74-9F4F-5F1982786F7C}"/>
 				</Relation>
 				<Relation Priority="100">
-					<Type GUID="{40BD39B2-C3EA-4F74-9F4F-5F1982786F7C}"></Type>
+					<Type GUID="{40BD39B2-C3EA-4F74-9F4F-5F1982786F7C}"/>
 				</Relation>
 				<Relation Priority="100">
-					<Type GUID="{8CDE0C45-AB9D-42DB-BC94-1CF7521AB268}"></Type>
+					<Type GUID="{8CDE0C45-AB9D-42DB-BC94-1CF7521AB268}"/>
 				</Relation>
 			</Relations>
 		</DataType>
@@ -1330,25 +1340,35 @@ External Setpoint Generation:
 		</DataType>
 		<DataType>
 			<Name GUID="{F27C2E36-F71A-4739-B9BA-8A892874FECC}" PersistentType="true">VacEventClass</Name>
-			<DisplayName TxtId=""><![CDATA[NewEventClass_DisplayText]]></DisplayName>
+			<DisplayName TxtId="">
+				<![CDATA[NewEventClass_DisplayText]]>
+			</DisplayName>
 			<EventId>
 				<Name Id="1">Error</Name>
-				<DisplayName TxtId=""><![CDATA[General Error: {0}]]></DisplayName>
+				<DisplayName TxtId="">
+					<![CDATA[General Error: {0}]]>
+				</DisplayName>
 				<Severity>Warning</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="2">ErrorTO</Name>
-				<DisplayName TxtId=""><![CDATA[Timeout Error: {0}]]></DisplayName>
+				<DisplayName TxtId="">
+					<![CDATA[Timeout Error: {0}]]>
+				</DisplayName>
 				<Severity>Warning</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="3">Setpoint</Name>
-				<DisplayName TxtId=""><![CDATA[Setpoint out of range: {0}]]></DisplayName>
+				<DisplayName TxtId="">
+					<![CDATA[Setpoint out of range: {0}]]>
+				</DisplayName>
 				<Severity>Info</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="4">Inlk_Active</Name>
-				<DisplayName TxtId=""><![CDATA[Interlock Active: {0}]]></DisplayName>
+				<DisplayName TxtId="">
+					<![CDATA[Interlock Active: {0}]]>
+				</DisplayName>
 				<Severity>Warning</Severity>
 			</EventId>
 			<Hides>
@@ -1356,6 +1376,230 @@ External Setpoint Generation:
 				<Hide GUID="{CCDD7DF5-CC19-4B0A-BD3D-E19496C0B581}"/>
 				<Hide GUID="{E397242B-EF99-4F1A-BB18-362C2DB089BD}"/>
 			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{CD9A5CB4-772A-4C5D-92CC-8611A9FB1859}">ST_PMPS_Attenuator</Name>
+			<BitSize>48</BitSize>
+			<SubItem>
+				<Name>nReqAtt</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nAttCur</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>xAttOK</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{A6175640-219D-4EFE-96DC-913F7DAE0CBA}"/>
+				<Hide GUID="{E56E3FA8-55E9-40D5-A85F-9A19737EB6BA}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{C3F16A32-5ACF-4E18-942D-BE26D1DC8A5F}" PersistentType="true">ST_BeamParams</Name>
+			<BitSize>1856</BitSize>
+			<SubItem>
+				<Name>fAtt</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment>
+					<![CDATA[  Requested pre-optic attenuation %  ]]>
+				</Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+				<Default>
+					<Value>100</Value>
+				</Default>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: Attenuation
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>nRate</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<Comment>
+					<![CDATA[ Pulse-rate ]]>
+				</Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+				<Default>
+					<Value>10</Value>
+				</Default>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: Rate
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>fPP_mJ</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment>
+					<![CDATA[ Per pulse max energy (mJ) ]]>
+				</Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+				<Default>
+					<Value>20</Value>
+				</Default>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: PulseEnergy
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>neVRange</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<Comment>
+					<![CDATA[ Photon energy ranges ]]>
+				</Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>96</BitOffs>
+				<Default>
+					<Value>65535</Value>
+				</Default>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: PhotonEnergy
+        io: i</Value>
+					</Property>
+					<Property>
+						<Name>plcAttribute_displaymode</Name>
+						<Value>binary</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>astAttenuators</Name>
+				<Type GUID="{CD9A5CB4-772A-4C5D-92CC-8611A9FB1859}">ST_PMPS_Attenuator</Type>
+				<ArrayInfo>
+					<LBound>1</LBound>
+					<Elements>32</Elements>
+				</ArrayInfo>
+				<Comment>
+					<![CDATA[ Beamline attenuators ]]>
+				</Comment>
+				<BitSize>1536</BitSize>
+				<BitOffs>112</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: AuxAttenuator
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>aStoppers</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<ArrayInfo>
+					<LBound>1</LBound>
+					<Elements>16</Elements>
+				</ArrayInfo>
+				<Comment>
+					<![CDATA[ Stopper statuses ]]>
+				</Comment>
+				<BitSize>128</BitSize>
+				<BitOffs>1648</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: AuxAttenuator
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>xValidToggle</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment>
+					<![CDATA[ Toggle for watchdog]]>
+				</Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>1776</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>xValid</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment>
+					<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
+				</Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>1784</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: Valid
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>nCohortInt</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000B}">ULINT</Type>
+				<Comment>
+					<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
+				</Comment>
+				<BitSize>64</BitSize>
+				<BitOffs>1792</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: Attenuation
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{41F989BD-E6AB-4C12-83CE-EE801B1CE196}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{B0C99D2E-B18D-4753-A368-EB6827B6F002}" PersistentType="true">ST_PMPS_Stopper</Name>
+			<BitSize>656</BitSize>
+			<SubItem>
+				<Name>DeviceID</Name>
+				<Type GUID="{18071995-0000-0000-0000-000100000050}">STRING(80)</Type>
+				<BitSize>648</BitSize>
+				<BitOffs>0</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: DeviceID
+            io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>In</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>648</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: In
+            io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
 		</DataType>
 	</DataTypes>
 	<Project ProjectGUID="{6B587B9D-5C33-45DF-B517-EF65C95BB278}" TargetNetId="172.21.92.59.1.1" ShowHideConfigurations="#x306">
@@ -1374,6 +1618,9 @@ External Setpoint Generation:
 					<Name>SimTask</Name>
 				</Task>
 			</Tasks>
+			<TypeSystem>
+				<AdditionalTmcFile Name="pmpsDT" File="..\..\..\lcls-twincat-pmps\lcls-twincat-pmps\pmpsDT.tmc"/>
+			</TypeSystem>
 		</System>
 		<Motion>
 			<NC>
@@ -1392,7 +1639,7 @@ External Setpoint Generation:
 				<SvbTask Priority="8" CycleTime="100000" AmsPort="511">
 					<Name>NC-Task 1 SVB</Name>
 				</SvbTask>
-				<Axis Id="3" CreateSymbols="true" AxisType="1">
+				<Axis CreateSymbols="true" AxisType="1" Id="3">
 					<Name>VGP_40</Name>
 					<AxisPara>
 						<General UnitName="steps"/>
@@ -1416,6 +1663,15 @@ External Setpoint Generation:
 								</SubVar>
 								<SubVar TypeFormatIndex="2">
 									<Name>nDataIn2</Name>
+								</SubVar>
+								<SubVar>
+									<Name>nState4</Name>
+									<Comment>
+										<![CDATA[Encoder Status 4 (automatically linked):
+0x01 (Bit 0) = IO data invalid (e.g. EtherCAT 'WcState')
+0x02 (Bit 1) = IO data input toggle (e.g. EtherCAT 'InputToggle')
+]]>
+									</Comment>
 								</SubVar>
 								<SubVar TypeFormatIndex="2">
 									<Name>nDataIn3</Name>
@@ -1478,6 +1734,18 @@ External Setpoint Generation:
 								<SubVar TypeFormatIndex="2">
 									<Name>nDataIn2</Name>
 								</SubVar>
+								<SubVar>
+									<Name>nState4</Name>
+									<Comment>
+										<![CDATA[Drive Status 4 (automatically linked):
+0x01 (0000 0001) = IO data invalid (e.g. EtherCAT 'WcState')
+0x02 (0000 0010) = IO data input toggle (e.g. EtherCAT 'InputToggle')
+
+Drive Status 4 (manually linked):
+0x80 (1000 0000) = Fast axis stop (digital IO interrupt)
+]]>
+									</Comment>
+								</SubVar>
 								<SubVar TypeFormatIndex="2">
 									<Name>nDataIn3</Name>
 								</SubVar>
@@ -1506,19 +1774,23 @@ External Setpoint Generation:
 								</SubVar>
 								<SubVar>
 									<Name>nCtrl2</Name>
-									<Comment><![CDATA[Digital Outputs Setpoint Generator:
+									<Comment>
+										<![CDATA[Digital Outputs Setpoint Generator:
 0x41 (0100 0001) = Minus (0x42 for inverse motor polarity)
 0x42 (0100 0010) = Plus (0x41 for inverse motor polarity)
 0x80 (1000 0000) = Stop
-]]></Comment>
+]]>
+									</Comment>
 								</SubVar>
 								<SubVar>
 									<Name>nCtrl3</Name>
-									<Comment><![CDATA[Digital Outputs (Setpoint Generator + Position Controller):
+									<Comment>
+										<![CDATA[Digital Outputs (Setpoint Generator + Position Controller):
 0x41 (0100 0001) = Minus (0x42 for inverse motor polarity)
 0x42 (0100 0010) = Plus (0x41 for inverse motor polarity)
 0x80 (1000 0000) = Stop
-]]></Comment>
+]]>
+									</Comment>
 								</SubVar>
 								<SubVar TypeFormatIndex="2">
 									<Name>nDataOut3</Name>
@@ -1552,7 +1824,52 @@ External Setpoint Generation:
 						<Name>Outputs</Name>
 						<Var>
 							<Name>ToPlc</Name>
-							<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF_OLD4</Type>
+							<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
 						</Var>
 					</Vars>
 				</Axis>
@@ -1566,13 +1883,17 @@ External Setpoint Generation:
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
-							<Comment><![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]></Comment>
+							<Name>L2SI_Vacuum_Library.Global_Variables.g_stSystem.I_EcatMaster1</Name>
+							<Comment>
+								<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
+							</Comment>
 							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 						</Var>
 						<Var>
-							<Name>L2SI_Vacuum_Library.Global_Variables.g_stSystem.I_EcatMaster1</Name>
-							<Comment><![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]></Comment>
+							<Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
+							<Comment>
+								<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
+							</Comment>
 							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 						</Var>
 						<Var>
@@ -1581,7 +1902,52 @@ External Setpoint Generation:
 						</Var>
 						<Var>
 							<Name>GVL_INJ.VGP_40.Axis.NcToPlc</Name>
-							<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF_OLD4</Type>
+							<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
 						</Var>
 						<Var>
 							<Name>GVL_INJ.VGP_40.InfoData_State</Name>
@@ -1589,47 +1955,65 @@ External Setpoint Generation:
 						</Var>
 						<Var>
 							<Name>GVL_INJ.GCM_80.i_iPRESS_R</Name>
-							<Comment><![CDATA[ input Pressure // Link to analog Input]]></Comment>
+							<Comment>
+								<![CDATA[ input Pressure // Link to analog Input]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>GVL_INJ.GFM_86.iError</Name>
-							<Comment><![CDATA[ Link to terminal diagnostics]]></Comment>
+							<Comment>
+								<![CDATA[ Link to terminal diagnostics]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_INJ.GFM_86.i_iPRESS_R</Name>
-							<Comment><![CDATA[ input Pressure // Link to analog Input]]></Comment>
+							<Comment>
+								<![CDATA[ input Pressure // Link to analog Input]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>GVL_INJ.GFM_85.iError</Name>
-							<Comment><![CDATA[ Link to terminal diagnostics]]></Comment>
+							<Comment>
+								<![CDATA[ Link to terminal diagnostics]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_INJ.GFM_85.i_iPRESS_R</Name>
-							<Comment><![CDATA[ input Pressure // Link to analog Input]]></Comment>
+							<Comment>
+								<![CDATA[ input Pressure // Link to analog Input]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>GVL_INJ.GFM_84.iError</Name>
-							<Comment><![CDATA[ Link to terminal diagnostics]]></Comment>
+							<Comment>
+								<![CDATA[ Link to terminal diagnostics]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_INJ.GFM_84.i_iPRESS_R</Name>
-							<Comment><![CDATA[ input Pressure // Link to analog Input]]></Comment>
+							<Comment>
+								<![CDATA[ input Pressure // Link to analog Input]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>GVL_INJ.GFM_83.iError</Name>
-							<Comment><![CDATA[ Link to terminal diagnostics]]></Comment>
+							<Comment>
+								<![CDATA[ Link to terminal diagnostics]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_INJ.GFM_83.i_iPRESS_R</Name>
-							<Comment><![CDATA[ input Pressure // Link to analog Input]]></Comment>
+							<Comment>
+								<![CDATA[ input Pressure // Link to analog Input]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
@@ -1650,92 +2034,128 @@ External Setpoint Generation:
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_GPI_10.i_iPRESS_R</Name>
-							<Comment><![CDATA[ input Pressure // Link to analog Input]]></Comment>
+							<Comment>
+								<![CDATA[ input Pressure // Link to analog Input]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_GPI_40.i_iPRESS_R</Name>
-							<Comment><![CDATA[ input Pressure // Link to analog Input]]></Comment>
+							<Comment>
+								<![CDATA[ input Pressure // Link to analog Input]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_GPI_70.i_iPRESS_R</Name>
-							<Comment><![CDATA[ input Pressure // Link to analog Input]]></Comment>
+							<Comment>
+								<![CDATA[ input Pressure // Link to analog Input]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_10.i_xAtSpd</Name>
-							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Comment>
+								<![CDATA[ Normaml operation when true]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_10.i_xFault</Name>
-							<Comment><![CDATA[ Error // this open collector output signal is ON when a system fault condition is detected]]></Comment>
+							<Comment>
+								<![CDATA[ Error // this open collector output signal is ON when a system fault condition is detected]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_20.i_xAtSpd</Name>
-							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Comment>
+								<![CDATA[ Normaml operation when true]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_20.i_xFault</Name>
-							<Comment><![CDATA[ Error // this open collector output signal is ON when a system fault condition is detected]]></Comment>
+							<Comment>
+								<![CDATA[ Error // this open collector output signal is ON when a system fault condition is detected]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_30.i_xAtSpd</Name>
-							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Comment>
+								<![CDATA[ Normaml operation when true]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_30.i_xFault</Name>
-							<Comment><![CDATA[ Error // this open collector output signal is ON when a system fault condition is detected]]></Comment>
+							<Comment>
+								<![CDATA[ Error // this open collector output signal is ON when a system fault condition is detected]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_40.i_xAtSpd</Name>
-							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Comment>
+								<![CDATA[ Normaml operation when true]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_40.i_xFault</Name>
-							<Comment><![CDATA[ Error // this open collector output signal is ON when a system fault condition is detected]]></Comment>
+							<Comment>
+								<![CDATA[ Error // this open collector output signal is ON when a system fault condition is detected]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_50.i_xAtSpd</Name>
-							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Comment>
+								<![CDATA[ Normaml operation when true]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_50.i_xFault</Name>
-							<Comment><![CDATA[ Error // this open collector output signal is ON when a system fault condition is detected]]></Comment>
+							<Comment>
+								<![CDATA[ Error // this open collector output signal is ON when a system fault condition is detected]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_60.i_xAtSpd</Name>
-							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Comment>
+								<![CDATA[ Normaml operation when true]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_60.i_xFault</Name>
-							<Comment><![CDATA[ Error // this open collector output signal is ON when a system fault condition is detected]]></Comment>
+							<Comment>
+								<![CDATA[ Error // this open collector output signal is ON when a system fault condition is detected]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_70.i_xAtSpd</Name>
-							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Comment>
+								<![CDATA[ Normaml operation when true]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_70.i_xFault</Name>
-							<Comment><![CDATA[ Error // this open collector output signal is ON when a system fault condition is detected]]></Comment>
+							<Comment>
+								<![CDATA[ Error // this open collector output signal is ON when a system fault condition is detected]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_VRC_10.i_xOpnLS</Name>
-							<Comment><![CDATA[IO]]></Comment>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -1744,7 +2164,9 @@ External Setpoint Generation:
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_VRC_20.i_xOpnLS</Name>
-							<Comment><![CDATA[IO]]></Comment>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -1753,7 +2175,9 @@ External Setpoint Generation:
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_VRC_30.i_xOpnLS</Name>
-							<Comment><![CDATA[IO]]></Comment>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -1762,7 +2186,9 @@ External Setpoint Generation:
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_VRC_50.i_xOpnLS</Name>
-							<Comment><![CDATA[IO]]></Comment>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -1771,7 +2197,9 @@ External Setpoint Generation:
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_VRC_60.i_xOpnLS</Name>
-							<Comment><![CDATA[IO]]></Comment>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -1780,7 +2208,9 @@ External Setpoint Generation:
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_VRC_70.i_xOpnLS</Name>
-							<Comment><![CDATA[IO]]></Comment>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -1789,47 +2219,65 @@ External Setpoint Generation:
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_GCC_10.i_iPRESS_R</Name>
-							<Comment><![CDATA[ Controls and I/Os]]></Comment>
+							<Comment>
+								<![CDATA[ Controls and I/Os]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_GCC_20.i_iPRESS_R</Name>
-							<Comment><![CDATA[ Controls and I/Os]]></Comment>
+							<Comment>
+								<![CDATA[ Controls and I/Os]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_GCC_30.i_iPRESS_R</Name>
-							<Comment><![CDATA[ Controls and I/Os]]></Comment>
+							<Comment>
+								<![CDATA[ Controls and I/Os]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_GCC_40.i_iPRESS_R</Name>
-							<Comment><![CDATA[ Controls and I/Os]]></Comment>
+							<Comment>
+								<![CDATA[ Controls and I/Os]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_GCC_50.i_iPRESS_R</Name>
-							<Comment><![CDATA[ Controls and I/Os]]></Comment>
+							<Comment>
+								<![CDATA[ Controls and I/Os]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_GCC_60.i_iPRESS_R</Name>
-							<Comment><![CDATA[ Controls and I/Os]]></Comment>
+							<Comment>
+								<![CDATA[ Controls and I/Os]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_GCC_70.i_iPRESS_R</Name>
-							<Comment><![CDATA[ Controls and I/Os]]></Comment>
+							<Comment>
+								<![CDATA[ Controls and I/Os]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PRT_40.i_xAlarmOK</Name>
-							<Comment><![CDATA[ Normally closed Alarm bit]]></Comment>
+							<Comment>
+								<![CDATA[ Normally closed Alarm bit]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PRT_40.i_xIsRun</Name>
-							<Comment><![CDATA[ Input status]]></Comment>
+							<Comment>
+								<![CDATA[ Input status]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
@@ -1837,9 +2285,11 @@ External Setpoint Generation:
 						<Name>PlcTask Outputs</Name>
 						<Var>
 							<Name>GVL_INJ.VCN_40.q_iRawPosition</Name>
-							<Comment><![CDATA[iResolution: INT :=16;
+							<Comment>
+								<![CDATA[iResolution: INT :=16;
  
-IO]]></Comment>
+IO]]>
+							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
@@ -1848,82 +2298,114 @@ IO]]></Comment>
 						</Var>
 						<Var>
 							<Name>GVL_INJ.VVC_80.q_xOPN_DO</Name>
-							<Comment><![CDATA[IO]]></Comment>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_INJ.VVC_81.q_xOPN_DO</Name>
-							<Comment><![CDATA[IO]]></Comment>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_INJ.VVC_82.q_xOPN_DO</Name>
-							<Comment><![CDATA[IO]]></Comment>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_INJ.VVC_83.q_xOPN_DO</Name>
-							<Comment><![CDATA[IO]]></Comment>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_INJ.VVC_84.q_xOPN_DO</Name>
-							<Comment><![CDATA[IO]]></Comment>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_INJ.VVC_85.q_xOPN_DO</Name>
-							<Comment><![CDATA[IO]]></Comment>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_INJ.VVC_86.q_xOPN_DO</Name>
-							<Comment><![CDATA[IO]]></Comment>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_INJ.hv1.q_HV_DO</Name>
-							<Comment><![CDATA[outputs]]></Comment>
+							<Comment>
+								<![CDATA[outputs]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_INJ.hv2.q_HV_DO</Name>
-							<Comment><![CDATA[outputs]]></Comment>
+							<Comment>
+								<![CDATA[outputs]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_10.q_RunDO</Name>
-							<Comment><![CDATA[ Start/Stop]]></Comment>
+							<Comment>
+								<![CDATA[ Start/Stop]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_20.q_RunDO</Name>
-							<Comment><![CDATA[ Start/Stop]]></Comment>
+							<Comment>
+								<![CDATA[ Start/Stop]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_30.q_RunDO</Name>
-							<Comment><![CDATA[ Start/Stop]]></Comment>
+							<Comment>
+								<![CDATA[ Start/Stop]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_40.q_RunDO</Name>
-							<Comment><![CDATA[ Start/Stop]]></Comment>
+							<Comment>
+								<![CDATA[ Start/Stop]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_50.q_RunDO</Name>
-							<Comment><![CDATA[ Start/Stop]]></Comment>
+							<Comment>
+								<![CDATA[ Start/Stop]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_60.q_RunDO</Name>
-							<Comment><![CDATA[ Start/Stop]]></Comment>
+							<Comment>
+								<![CDATA[ Start/Stop]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PTM_70.q_RunDO</Name>
-							<Comment><![CDATA[ Start/Stop]]></Comment>
+							<Comment>
+								<![CDATA[ Start/Stop]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -1952,52 +2434,72 @@ IO]]></Comment>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_GCC_10.q_xHV_DIS</Name>
-							<Comment><![CDATA[ Disable Gauge High Voltage when True // 'TcLinkTo' (EL2794) ^Output]]></Comment>
+							<Comment>
+								<![CDATA[ Disable Gauge High Voltage when True // 'TcLinkTo' (EL2794) ^Output]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_GCC_20.q_xHV_DIS</Name>
-							<Comment><![CDATA[ Disable Gauge High Voltage when True // 'TcLinkTo' (EL2794) ^Output]]></Comment>
+							<Comment>
+								<![CDATA[ Disable Gauge High Voltage when True // 'TcLinkTo' (EL2794) ^Output]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_GCC_30.q_xHV_DIS</Name>
-							<Comment><![CDATA[ Disable Gauge High Voltage when True // 'TcLinkTo' (EL2794) ^Output]]></Comment>
+							<Comment>
+								<![CDATA[ Disable Gauge High Voltage when True // 'TcLinkTo' (EL2794) ^Output]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_GCC_40.q_xHV_DIS</Name>
-							<Comment><![CDATA[ Disable Gauge High Voltage when True // 'TcLinkTo' (EL2794) ^Output]]></Comment>
+							<Comment>
+								<![CDATA[ Disable Gauge High Voltage when True // 'TcLinkTo' (EL2794) ^Output]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_GCC_50.q_xHV_DIS</Name>
-							<Comment><![CDATA[ Disable Gauge High Voltage when True // 'TcLinkTo' (EL2794) ^Output]]></Comment>
+							<Comment>
+								<![CDATA[ Disable Gauge High Voltage when True // 'TcLinkTo' (EL2794) ^Output]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_GCC_60.q_xHV_DIS</Name>
-							<Comment><![CDATA[ Disable Gauge High Voltage when True // 'TcLinkTo' (EL2794) ^Output]]></Comment>
+							<Comment>
+								<![CDATA[ Disable Gauge High Voltage when True // 'TcLinkTo' (EL2794) ^Output]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_GCC_70.q_xHV_DIS</Name>
-							<Comment><![CDATA[ Disable Gauge High Voltage when True // 'TcLinkTo' (EL2794) ^Output]]></Comment>
+							<Comment>
+								<![CDATA[ Disable Gauge High Voltage when True // 'TcLinkTo' (EL2794) ^Output]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PRT_40.q_xRunDo</Name>
-							<Comment><![CDATA[ Output signal]]></Comment>
+							<Comment>
+								<![CDATA[ Output signal]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PRT_40.q_xRemote</Name>
-							<Comment><![CDATA[ Remote/Local Control]]></Comment>
+							<Comment>
+								<![CDATA[ Remote/Local Control]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_GMD.fb_EM1K0_GMD_PRT_40.q_xResetAlarm</Name>
-							<Comment><![CDATA[ Remote/Local Control]]></Comment>
+							<Comment>
+								<![CDATA[ Remote/Local Control]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
@@ -2005,13 +2507,17 @@ IO]]></Comment>
 						<Name>PlcTask Retains</Name>
 						<Var>
 							<Name>PMPS_GVL.SuccessfulPreemption</Name>
-							<Comment><![CDATA[ Any time BPTM applies a new BP request which is confirmed]]></Comment>
+							<Comment>
+								<![CDATA[ Any time BPTM applies a new BP request which is confirmed]]>
+							</Comment>
 							<Type>ULINT</Type>
 							<InOut>7</InOut>
 						</Var>
 						<Var>
 							<Name>PMPS_GVL.AccumulatedFF</Name>
-							<Comment><![CDATA[ Any time a FF occurs]]></Comment>
+							<Comment>
+								<![CDATA[ Any time a FF occurs]]>
+							</Comment>
 							<Type>ULINT</Type>
 							<InOut>7</InOut>
 						</Var>
@@ -2021,7 +2527,7 @@ IO]]></Comment>
 					</TaskPouOids>
 				</Instance>
 			</Project>
-			<Project Disabled="true" GUID="{DC13CF13-96D9-4602-AE14-580A603776E8}" Name="plc_kfe_gmd_vac_sim" PrjFilePath="plc_kfe_gmd_vac_sim\plc_kfe_gmd_vac_sim.plcproj" TmcFilePath="plc_kfe_gmd_vac_sim\plc_kfe_gmd_vac_sim.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e">
+			<Project GUID="{DC13CF13-96D9-4602-AE14-580A603776E8}" Name="plc_kfe_gmd_vac_sim" PrjFilePath="plc_kfe_gmd_vac_sim\plc_kfe_gmd_vac_sim.plcproj" TmcFilePath="plc_kfe_gmd_vac_sim\plc_kfe_gmd_vac_sim.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e">
 				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="plc_kfe_gmd_vac_sim\plc_kfe_gmd_vac_sim.tmc">
 					<Name>plc_kfe_gmd_vac_sim Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
@@ -2029,8 +2535,101 @@ IO]]></Comment>
 						<Name>SimTask Inputs</Name>
 						<Var>
 							<Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
-							<Comment><![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]></Comment>
+							<Comment>
+								<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
+							</Comment>
 							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_10.i_xSol</Name>
+							<Comment>
+								<![CDATA[Solenoid to control the valve( either closed or open)]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_20.i_xSol</Name>
+							<Comment>
+								<![CDATA[Solenoid to control the valve( either closed or open)]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_30.i_xSol</Name>
+							<Comment>
+								<![CDATA[Solenoid to control the valve( either closed or open)]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_50.i_xSol</Name>
+							<Comment>
+								<![CDATA[Solenoid to control the valve( either closed or open)]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_60.i_xSol</Name>
+							<Comment>
+								<![CDATA[Solenoid to control the valve( either closed or open)]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_70.i_xSol</Name>
+							<Comment>
+								<![CDATA[Solenoid to control the valve( either closed or open)]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_10.i_xHvOn</Name>
+							<Comment>
+								<![CDATA[High voltage On to turn on ion gauges]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_20.i_xHvOn</Name>
+							<Comment>
+								<![CDATA[High voltage On to turn on ion gauges]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_30.i_xHvOn</Name>
+							<Comment>
+								<![CDATA[High voltage On to turn on ion gauges]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_40.i_xHvOn</Name>
+							<Comment>
+								<![CDATA[High voltage On to turn on ion gauges]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_50.i_xHvOn</Name>
+							<Comment>
+								<![CDATA[High voltage On to turn on ion gauges]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_60.i_xHvOn</Name>
+							<Comment>
+								<![CDATA[High voltage On to turn on ion gauges]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_70.i_xHvOn</Name>
+							<Comment>
+								<![CDATA[High voltage On to turn on ion gauges]]>
+							</Comment>
+							<Type>BOOL</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2">
@@ -2038,6 +2637,160 @@ IO]]></Comment>
 						<Var>
 							<Name>PRG_DIAGNOSTIC.heartbeat</Name>
 							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_10.q_xOpnLS</Name>
+							<Comment>
+								<![CDATA[readback whether open]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_10.q_xClsLS</Name>
+							<Comment>
+								<![CDATA[readback whether closed]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GPI_10.q_iRawPress</Name>
+							<Comment>
+								<![CDATA[ The transformed integer from real pressure to an integer encoded signal to be passed to the PLC ]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GPI_40.q_iRawPress</Name>
+							<Comment>
+								<![CDATA[ The transformed integer from real pressure to an integer encoded signal to be passed to the PLC ]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GPI_70.q_iRawPress</Name>
+							<Comment>
+								<![CDATA[ The transformed integer from real pressure to an integer encoded signal to be passed to the PLC ]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_20.q_xOpnLS</Name>
+							<Comment>
+								<![CDATA[readback whether open]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_20.q_xClsLS</Name>
+							<Comment>
+								<![CDATA[readback whether closed]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_30.q_xOpnLS</Name>
+							<Comment>
+								<![CDATA[readback whether open]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_30.q_xClsLS</Name>
+							<Comment>
+								<![CDATA[readback whether closed]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_50.q_xOpnLS</Name>
+							<Comment>
+								<![CDATA[readback whether open]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_50.q_xClsLS</Name>
+							<Comment>
+								<![CDATA[readback whether closed]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_60.q_xOpnLS</Name>
+							<Comment>
+								<![CDATA[readback whether open]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_60.q_xClsLS</Name>
+							<Comment>
+								<![CDATA[readback whether closed]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_70.q_xOpnLS</Name>
+							<Comment>
+								<![CDATA[readback whether open]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_70.q_xClsLS</Name>
+							<Comment>
+								<![CDATA[readback whether closed]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_10.q_iRawPress</Name>
+							<Comment>
+								<![CDATA[ The transformed integer from real pressure to an integer encoded signal to be passed to the PLC ]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_20.q_iRawPress</Name>
+							<Comment>
+								<![CDATA[ The transformed integer from real pressure to an integer encoded signal to be passed to the PLC ]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_30.q_iRawPress</Name>
+							<Comment>
+								<![CDATA[ The transformed integer from real pressure to an integer encoded signal to be passed to the PLC ]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_40.q_iRawPress</Name>
+							<Comment>
+								<![CDATA[ The transformed integer from real pressure to an integer encoded signal to be passed to the PLC ]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_50.q_iRawPress</Name>
+							<Comment>
+								<![CDATA[ The transformed integer from real pressure to an integer encoded signal to be passed to the PLC ]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_60.q_iRawPress</Name>
+							<Comment>
+								<![CDATA[ The transformed integer from real pressure to an integer encoded signal to be passed to the PLC ]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_70.q_iRawPress</Name>
+							<Comment>
+								<![CDATA[ The transformed integer from real pressure to an integer encoded signal to be passed to the PLC ]]>
+							</Comment>
+							<Type>INT</Type>
 						</Var>
 					</Vars>
 					<TaskPouOids>
@@ -2047,7 +2800,7 @@ IO]]></Comment>
 			</Project>
 		</Plc>
 		<Io>
-			<Device Id="1" DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="172.21.92.59.2.1" RemoteName="Device 1 (EtherCAT)">
+			<Device DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="172.21.92.59.2.1" RemoteName="Device 1 (EtherCAT)" Id="1">
 				<Name>Device 1 (EtherCAT)</Name>
 				<AddressInfo>
 					<Ccat>
