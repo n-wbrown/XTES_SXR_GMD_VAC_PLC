@@ -2237,13 +2237,13 @@ IO]]></Comment>
 				<Link VarA="PlcTask Outputs^GVL_GMD.fb_EM1K0_GMD_VRC_50.q_xOPN_DO" VarB="Channel 2^Output"/>
 				<Link VarA="PlcTask Outputs^GVL_GMD.fb_EM1K0_GMD_VRC_60.q_xOPN_DO" VarB="Channel 4^Output"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^EK1100_02_00^EL2088_02_10">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^EK1100_02_00^EL2008_02_10">
 				<Link VarA="PlcTask Outputs^GVL_GMD.fb_EM1K0_GMD_PTM_10.q_RunDO" VarB="Channel 1^Output"/>
 				<Link VarA="PlcTask Outputs^GVL_GMD.fb_EM1K0_GMD_PTM_20.q_RunDO" VarB="Channel 2^Output"/>
 				<Link VarA="PlcTask Outputs^GVL_GMD.fb_EM1K0_GMD_PTM_30.q_RunDO" VarB="Channel 3^Output"/>
 				<Link VarA="PlcTask Outputs^GVL_GMD.fb_EM1K0_GMD_PTM_40.q_RunDO" VarB="Channel 4^Output"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^EK1100_02_00^EL2088_02_14">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^EK1100_02_00^EL2008_02_14">
 				<Link VarA="PlcTask Outputs^GVL_GMD.fb_EM1K0_GMD_PTM_50.q_RunDO" VarB="Channel 1^Output"/>
 				<Link VarA="PlcTask Outputs^GVL_GMD.fb_EM1K0_GMD_PTM_60.q_RunDO" VarB="Channel 2^Output"/>
 				<Link VarA="PlcTask Outputs^GVL_GMD.fb_EM1K0_GMD_PTM_70.q_RunDO" VarB="Channel 3^Output"/>
