@@ -2032,12 +2032,187 @@ IO]]></Comment>
 							<Comment><![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]></Comment>
 							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_10.i_xSol</Name>
+							<Comment><![CDATA[Solenoid to control the valve( either closed or open)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_20.i_xSol</Name>
+							<Comment><![CDATA[Solenoid to control the valve( either closed or open)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_30.i_xSol</Name>
+							<Comment><![CDATA[Solenoid to control the valve( either closed or open)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_50.i_xSol</Name>
+							<Comment><![CDATA[Solenoid to control the valve( either closed or open)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_60.i_xSol</Name>
+							<Comment><![CDATA[Solenoid to control the valve( either closed or open)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_70.i_xSol</Name>
+							<Comment><![CDATA[Solenoid to control the valve( either closed or open)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_10.i_xHvOn</Name>
+							<Comment><![CDATA[High voltage On to turn on ion gauges]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_20.i_xHvOn</Name>
+							<Comment><![CDATA[High voltage On to turn on ion gauges]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_30.i_xHvOn</Name>
+							<Comment><![CDATA[High voltage On to turn on ion gauges]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_40.i_xHvOn</Name>
+							<Comment><![CDATA[High voltage On to turn on ion gauges]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_50.i_xHvOn</Name>
+							<Comment><![CDATA[High voltage On to turn on ion gauges]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_60.i_xHvOn</Name>
+							<Comment><![CDATA[High voltage On to turn on ion gauges]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_70.i_xHvOn</Name>
+							<Comment><![CDATA[High voltage On to turn on ion gauges]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="2">
 						<Name>SimTask Outputs</Name>
 						<Var>
 							<Name>PRG_DIAGNOSTIC.heartbeat</Name>
 							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GPI_10.q_iRawPress</Name>
+							<Comment><![CDATA[ The transformed integer from real pressure to an integer encoded signal to be passed to the PLC ]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GPI_40.q_iRawPress</Name>
+							<Comment><![CDATA[ The transformed integer from real pressure to an integer encoded signal to be passed to the PLC ]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GPI_70.q_iRawPress</Name>
+							<Comment><![CDATA[ The transformed integer from real pressure to an integer encoded signal to be passed to the PLC ]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_10.q_xOpnLS</Name>
+							<Comment><![CDATA[readback whether open]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_10.q_xClsLS</Name>
+							<Comment><![CDATA[readback whether closed]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_20.q_xOpnLS</Name>
+							<Comment><![CDATA[readback whether open]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_20.q_xClsLS</Name>
+							<Comment><![CDATA[readback whether closed]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_30.q_xOpnLS</Name>
+							<Comment><![CDATA[readback whether open]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_30.q_xClsLS</Name>
+							<Comment><![CDATA[readback whether closed]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_50.q_xOpnLS</Name>
+							<Comment><![CDATA[readback whether open]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_50.q_xClsLS</Name>
+							<Comment><![CDATA[readback whether closed]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_60.q_xOpnLS</Name>
+							<Comment><![CDATA[readback whether open]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_60.q_xClsLS</Name>
+							<Comment><![CDATA[readback whether closed]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_70.q_xOpnLS</Name>
+							<Comment><![CDATA[readback whether open]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_VRC_70.q_xClsLS</Name>
+							<Comment><![CDATA[readback whether closed]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_10.q_iRawPress</Name>
+							<Comment><![CDATA[ The transformed integer from real pressure to an integer encoded signal to be passed to the PLC ]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_20.q_iRawPress</Name>
+							<Comment><![CDATA[ The transformed integer from real pressure to an integer encoded signal to be passed to the PLC ]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_30.q_iRawPress</Name>
+							<Comment><![CDATA[ The transformed integer from real pressure to an integer encoded signal to be passed to the PLC ]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_40.q_iRawPress</Name>
+							<Comment><![CDATA[ The transformed integer from real pressure to an integer encoded signal to be passed to the PLC ]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_50.q_iRawPress</Name>
+							<Comment><![CDATA[ The transformed integer from real pressure to an integer encoded signal to be passed to the PLC ]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_60.q_iRawPress</Name>
+							<Comment><![CDATA[ The transformed integer from real pressure to an integer encoded signal to be passed to the PLC ]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_GMD.st_EM1K0_GMD_GCC_70.q_iRawPress</Name>
+							<Comment><![CDATA[ The transformed integer from real pressure to an integer encoded signal to be passed to the PLC ]]></Comment>
+							<Type>INT</Type>
 						</Var>
 					</Vars>
 					<TaskPouOids>
